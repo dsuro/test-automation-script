@@ -1,0 +1,120 @@
+{
+  "data": [
+    {
+      "testCaseId": 101,
+      "testCaseDesc": "Apply Loan with 7.2% term",
+      "isCompleted": false,
+      "selected": false,
+      "steps": [
+        "Go to URL http://localhost:8080/index.html",
+        "Hover on Menu",
+        "Click on Apply submenu",
+        "In the loan application page enter name, address",
+        "Select India from country dropdown",
+        "Select Kolkata from city dropdown",
+        "Choose loan term 7.2% from term popup",
+        "click on submit"
+      ],
+      "subSteps": [
+        {
+          "testCaseId": 101,
+          "subStepId": 1,
+          "steps": ["Go to URL http://localhost:8080/index.html"],
+          "isCompleted": false,
+          "selected": false
+        },
+        {
+          "testCaseId": 101,
+          "subStepId": 2,
+          "steps": [
+            "Go to URL http://localhost:8080/index.html",
+            "Hover on Menu"
+          ],
+          "isCompleted": false,
+          "selected": false
+        },
+        {
+          "testCaseId": 101,
+          "subStepId": 3,
+          "steps": [
+            "Go to URL http://localhost:8080/index.html",
+            "Hover on Menu",
+            "Click on Apply submenu"
+          ],
+          "isCompleted": false,
+          "selected": false
+        },
+        {
+          "testCaseId": 101,
+          "subStepId": 4,
+          "steps": [
+            "Go to URL http://localhost:8080/index.html",
+            "Hover on Menu",
+            "Click on Apply submenu",
+            "In the loan application page enter name, address"
+          ],
+          "isCompleted": false,
+          "selected": false
+        },
+        {
+          "testCaseId": 101,
+          "subStepId": 5,
+          "steps": [
+            "Go to URL http://localhost:8080/index.html",
+            "Hover on Menu",
+            "Click on Apply submenu",
+            "In the loan application page enter name, address",
+            "Select India from country dropdown"
+          ],
+          "isCompleted": false,
+          "selected": false
+        },
+        {
+          "testCaseId": 101,
+          "subStepId": 6,
+          "steps": [
+            "Go to URL http://localhost:8080/index.html",
+            "Hover on Menu",
+            "Click on Apply submenu",
+            "In the loan application page enter name, address",
+            "Select India from country dropdown",
+            "Select Kolkata from city dropdown"
+          ],
+          "isCompleted": false,
+          "selected": false
+        },
+        {
+          "testCaseId": 101,
+          "subStepId": 7,
+          "steps": [
+            "Go to URL http://localhost:8080/index.html",
+            "Hover on Menu",
+            "Click on Apply submenu",
+            "In the loan application page enter name, address",
+            "Select India from country dropdown",
+            "Select Kolkata from city dropdown",
+            "Choose loan term 7.2% from term popup"
+          ],
+          "isCompleted": false,
+          "selected": false
+        },
+        {
+          "testCaseId": 101,
+          "subStepId": 8,
+          "steps": [
+            "Go to URL http://localhost:8080/index.html",
+            "Hover on Menu",
+            "Click on Apply submenu",
+            "In the loan application page enter name, address",
+            "Select India from country dropdown",
+            "Select Kolkata from city dropdown",
+            "Choose loan term 7.2% from term popup",
+            "click on submit"
+          ],
+          "isCompleted": false,
+          "selected": false
+        }
+      ]
+    }
+  ]
+}

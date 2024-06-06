@@ -1,0 +1,167 @@
+<div class="row">
+  <div class="col-md-12">
+    <p-splitter
+      [panelSizes]="[35, 35, 30]"
+      [style]="{ height: '600px' }"
+      styleClass="mb-5"
+    >
+      <ng-template pTemplate>
+        <!--Test Cases-->
+        <div class="col flex align-items-center justify-content-center">
+          <div class="">
+            <span class="list-title">Test Cases</span> &nbsp;&nbsp;
+            <span class="next-prev-navigation">
+              <i
+                class="pi pi-step-backward"
+                *ngIf="allTestCaseList?.length"
+                (click)="onNextTestCase()"
+              ></i>
+              &nbsp;&nbsp;
+              <i
+                class="pi pi-step-forward"
+                *ngIf="allTestCaseList?.length"
+                (click)="onPrevTestCase()"
+              ></i>
+            </span>
+          </div>
+          <div class="list-section">
+            <ul class="test-case">
+              <li *ngFor="let item of allTestCaseList">
+                <a
+                  [ngClass]="{
+                    active: item.selected,
+                    inactive: !item.selected,
+                    completed: item.isCompleted
+                  }"
+                  (click)="
+                    item.selected && !item.isCompleted && onTestCaseSelect(item)
+                  "
+                  >{{ item.testCaseDesc }}</a
+                >
+                &nbsp;
+                <i
+                  class="pi pi-check-circle completed-icon"
+                  *ngIf="item.isCompleted"
+                ></i>
+                <ul class="test-steps">
+                  <li *ngFor="let step of item.steps">
+                    {{ step }}
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template pTemplate>
+        <!--Sub Steps-->
+        <div
+          class="col flex align-items-center justify-content-center substep-container"
+        >
+          <div class="">
+            <span class="list-title">Sub Steps</span> &nbsp;&nbsp;
+            <span class="play-replay-navigation">
+              <i
+                class="pi pi-play play-btn"
+                *ngIf="allSubSteps?.length"
+                (click)="onPlaySubStep()"
+              ></i>
+              &nbsp;&nbsp;
+              <i
+                class="pi pi-replay play-btn"
+                *ngIf="allSubSteps?.length"
+                (click)="onRePlaySubSteps()"
+              ></i>
+            </span>
+          </div>
+          <div class="list-section">
+            <ul class="subSteps">
+              <li *ngFor="let item of allSubSteps" class="subStep">
+                <ul class="test-steps">
+                  <li
+                    class="subStep"
+                    *ngFor="let step of item.steps"
+                    [ngClass]="{
+                      active: item.selected,
+                      inactive: !item.selected,
+                      completed: item.isCompleted
+                    }"
+                  >
+                    {{ step }} &nbsp;<i
+                      class="pi pi-check-circle completed-icon"
+                      *ngIf="item.isCompleted"
+                    ></i>
+                  </li>
+                  <hr />
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template pTemplate>
+        <!--Code-->
+        <div
+          class="col flex align-items-center justify-content-center position-relative"
+        >
+          <p class="list-title">Code</p>
+
+          <ng-container *ngIf="selectedScriptCode">
+            <label for="custom-code-snippet" [hidden]="true"
+              >Implicit Label</label
+            >
+            <textarea
+              #customCodeSnippet
+              id="custom-code-snippet"
+              [(ngModel)]="customCode"
+              (ngModelChange)="onInput(); syncScroll()"
+              (scroll)="syncScroll()"
+              (keydown.TAB)="$event.preventDefault()"
+              spellcheck="false"
+            ></textarea>
+            <div
+              #customCodeHighlighter
+              id="custom-code-highliter"
+              class="code-section"
+            >
+              <pre
+                #preCodeBlock
+                id="language-java-block"
+                class="line-numbers"
+              ><code #javaCodeContent id="language-java-block-content" class="language-java"></code></pre>
+            </div>
+
+            <div class="position-absolute bottom-0 w-100">
+              <div
+                class="script-result text-start"
+                *ngIf="scriptCompileResponse"
+              >
+                <span
+                  [ngClass]="{
+                    'sucess-message': scriptCompileResponse.success,
+                    'error-message': !scriptCompileResponse.success
+                  }"
+                >
+                  {{ scriptCompileResponse.message }}
+                </span>
+              </div>
+              <div
+                class="script-run text-end"
+                [ngClass]="{
+                  'width-100': !scriptCompileResponse,
+                  'width-40': scriptCompileResponse
+                }"
+              >
+                <p-button
+                  label="Run"
+                  [disabled]="disabledScriptRun"
+                  (onClick)="onScriptRun(selectedScriptCode)"
+                ></p-button>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </ng-template>
+    </p-splitter>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row header">
+    <div class="col-md-12">Test Automation</div>
+  </div>
+  <div class="row file-uploader">
+    <div class="col-md-12">
+      <app-script-uploader
+        (onCompletion)="onTestCaseUpload($event)"
+      ></app-script-uploader>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <app-script-viewer #scriptViewer></app-script-viewer>
+    </div>
+  </div>
+</div>

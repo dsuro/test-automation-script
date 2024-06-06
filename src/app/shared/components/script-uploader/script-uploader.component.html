@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-3">
+    <label class="title">Upload Test Cases</label>
+  </div>
+  <div class="col-md-6 text-end">
+    <p-fileUpload
+      #fileUploader
+      mode="basic"
+      name="fileList"
+      [auto]="true"
+      [multiple]="false"
+      [accept]="allowedExtensions"
+      [chooseLabel]="'Browse File...'"
+      [showUploadButton]="false"
+      [showCancelButton]="false"
+    >
+    </p-fileUpload>
+  </div>
+  <div class="col-md-3">
+    <p-button label="Upload" (onClick)="onUpload()"></p-button>
+  </div>
+</div>

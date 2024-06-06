@@ -1,0 +1,44 @@
+{
+    "data":[
+        {
+            "testCaseId":101,
+            "subStepId":1,
+            "code":"driver.get('http://localhost:8080/index.html');"
+        },
+        {
+            "testCaseId":101,
+            "subStepId":2,
+            "code":"driver.get('http://localhost:8080/index.html');\n WebDriver driver = new ChromeDriver();"
+        },
+        {
+            "testCaseId":101,
+            "subStepId":3,
+            "code":"driver.get('http://localhost:8080/index.html');\n WebDriver driver = new ChromeDriver();\n driver.getTitle();"
+        },
+        {
+            "testCaseId":101,
+            "subStepId":4,
+            "code":"driver.get('http://localhost:8080/index.html');\n WebDriver driver = new ChromeDriver();\n driver.getTitle();\n driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));"
+        },
+        {
+            "testCaseId":101,
+            "subStepId":5,
+            "code":"driver.get('http://localhost:8080/index.html');\n WebDriver driver = new ChromeDriver();\n driver.getTitle();\n driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500)); \n WebElement textBox = driver.findElement(By.name('my-text'));"
+        },
+        {
+            "testCaseId":101,
+            "subStepId":6,
+            "code":"driver.get('http://localhost:8080/index.html');\n WebDriver driver = new ChromeDriver();\n driver.getTitle();\n driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500)); \n WebElement textBox = driver.findElement(By.name('my-text')); \n message.getText();"
+        },
+        {
+            "testCaseId":101,
+            "subStepId":7,
+            "code":"driver.get('http://localhost:8080/index.html');\n WebDriver driver = new ChromeDriver();\n driver.getTitle();\n driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500)); \n WebElement textBox = driver.findElement(By.name('my-text')); \n message.getText(); \n driver.quit();"
+        },
+        {
+            "testCaseId":101,
+            "subStepId":8,
+            "code":"driver.get('http://localhost:8080/index.html');\n WebDriver driver = new ChromeDriver();\n driver.getTitle();\n driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500)); \n WebElement textBox = driver.findElement(By.name('my-text')); \n message.getText(); \n driver.quit(); \n WebElement submitButton = driver.findElement(By.cssSelector('button'));\n submitButton.click();"
+        }
+    ]
+}
